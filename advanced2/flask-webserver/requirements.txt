@@ -1,4 +1,0 @@
-flask
-urllib2
-http
-requests
