@@ -1,9 +1,2 @@
-1) remove old code
-2) push to my git
-3) delete old containers on target
-4) update SG with 8082 
-5) pull new repo
-6) test daemon run of all containers
 7) test all flags
-8) write index.html for livinginsyn.com with relevant API info
 9) run through slides
