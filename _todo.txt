@@ -1,2 +1,0 @@
-7) test all flags
-9) run through slides
