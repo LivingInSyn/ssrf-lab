@@ -2,7 +2,7 @@
     <html>
     <head>
         <meta charset="UTF-8">
-        <title>Icon API</title>
+        <title>IconList API</title>
         <style>
 </style>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
@@ -24,17 +24,20 @@
         
     </head>
     <body class="vscode-body vscode-light">
-        <h1 id="icon-api">Icon API</h1>
-<p><strong>Please chose a unique <code>user_id</code> while testing, there is <em>no</em> protection from clobbering someone elses test</strong></p>
+        <h1 id="iconlist-api">IconList API</h1>
+<p>The IconList API is located at: <code>target.livinginsyn.com:8082/iconlist</code></p>
+<h2 id="get">GET</h2>
+<p>Return a list of available icons</p>
+<pre><code><code><div>$ curl target.livinginsyn.com:8082/iconlist
+{&quot;icons&quot;: [&quot;/icons-png/Thinkbox-Deadline_4x.png&quot;, &quot;/icons-png/Elastic-Container-Service_Container3_light-bg_4x.png&quot;, &quot;/icons-png/Compute_4x.png&quot;, &quot;/icons-png/Elastic-Container-Service_light-bg_4x.png&quot;,...]}
+</div></code></code></pre>
+<h1 id="icon-api">Icon API</h1>
+<p><strong>Please chose a unique <code>user_id</code> while testing, there is <em>zero</em> protection from clobbering someone elses test</strong></p>
 <h2 id="location">Location</h2>
-<p>The Icon Api is located at:</p>
+<p>The Icon API is located at:</p>
 <pre><code><code><div>target.livinginsyn.com:8082/icon
 </div></code></code></pre>
-<h2 id="icon-path">Icon Path</h2>
-<p>Paths used in <code>PUT</code> requests should be relative to <code>livinginsyn.com</code>. Icons can be found at:</p>
-<pre><code><code><div>livinginsyn.com/icons-png
-</div></code></code></pre>
-<h2 id="get">GET</h2>
+<h2 id="get-1">GET</h2>
 <p>GET requests take the form:</p>
 <pre><code><code><div>target.livinginsyn.com:8082/icon/&lt;user_id: string&gt;
 </div></code></code></pre>
@@ -53,7 +56,7 @@
 <pre><code><code><div>target.livinginsyn.com:8082/icon/&lt;user_id: string&gt;
 </div></code></code></pre>
 <h3 id="request-arguments">Request Arguments</h3>
-<p>The Put request takes a single argument <code>icon_path</code> which is a path relative to <code>livinginsyn.com</code></p>
+<p>The Put request takes a single argument <code>icon_path</code> which is a path returned by the <code>iconlist</code> API</p>
 <h3 id="return-value-1">Return Value</h3>
 <p>This API returns the user_id and the contents of the file at <code>icon_path</code> base64 encoded</p>
 <pre><code class="language-json"><div>{
@@ -62,7 +65,7 @@
 }
 </div></code></pre>
 <h3 id="example-1">Example</h3>
-<pre><code class="language-shell"><div><span class="hljs-meta">$</span><span class="bash"> curl -XPUT target.livinginsyn.com:8082/icon/foobar -d <span class="hljs-string">&quot;icon_path=/icons-png/ad.png&quot;</span></span>
+<pre><code class="language-shell"><div><span class="hljs-meta">$</span><span class="bash"> curl -XPUT target.livinginsyn.com:8082/icon/foobar -d <span class="hljs-string">&quot;icon_path=/icons-png/Thinkbox-Deadline_4x.png&quot;</span></span>
 {&quot;user_id&quot;: &quot;foobar&quot;, &quot;image&quot;: &quot;iVBOR...SuQmCC==&quot;}
 </div></code></pre>
 

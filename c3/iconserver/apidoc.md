@@ -1,17 +1,21 @@
+# IconList API
+The IconList API is located at: `target.livinginsyn.com:8082/iconlist`
+
+## GET 
+Return a list of available icons
+```
+$ curl target.livinginsyn.com:8082/iconlist
+{"icons": ["/icons-png/Thinkbox-Deadline_4x.png", "/icons-png/Elastic-Container-Service_Container3_light-bg_4x.png", "/icons-png/Compute_4x.png", "/icons-png/Elastic-Container-Service_light-bg_4x.png",...]}
+```
+
 # Icon API
 
-**Please chose a unique `user_id` while testing, there is _no_ protection from clobbering someone elses test**
+**Please chose a unique `user_id` while testing, there is _zero_ protection from clobbering someone elses test**
 
 ## Location
-The Icon Api is located at:
+The Icon API is located at:
 ```
 target.livinginsyn.com:8082/icon
-```
-
-## Icon Path
-Paths used in `PUT` requests should be relative to `livinginsyn.com`. Icons can be found at: 
-```
-livinginsyn.com/icons-png
 ```
 
 ## GET
@@ -39,7 +43,7 @@ target.livinginsyn.com:8082/icon/<user_id: string>
 ```
 
 ### Request Arguments
-The Put request takes a single argument `icon_path` which is a path relative to `livinginsyn.com`
+The Put request takes a single argument `icon_path` which is a path returned by the `iconlist` API
 
 ### Return Value
 This API returns the user_id and the contents of the file at `icon_path` base64 encoded
@@ -52,6 +56,6 @@ This API returns the user_id and the contents of the file at `icon_path` base64 
 
 ### Example
 ```shell
-$ curl -XPUT target.livinginsyn.com:8082/icon/foobar -d "icon_path=/icons-png/ad.png"
+$ curl -XPUT target.livinginsyn.com:8082/icon/foobar -d "icon_path=/icons-png/Thinkbox-Deadline_4x.png"
 {"user_id": "foobar", "image": "iVBOR...SuQmCC=="}
 ```
