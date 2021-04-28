@@ -39,5 +39,5 @@ api.add_resource(List, '/list-icons')
 api.add_resource(Icon, '/icons-png/<string:icon_id>')
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080)
+    app.run(host="0.0.0.0", port=80)
     #app.run(debug=True)

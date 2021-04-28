@@ -12,7 +12,7 @@ parser = reqparse.RequestParser()
 parser.add_argument('icon_path')
 #
 SECRET_URL = "172.16.0.4"
-SECRET_URL = "localhost:8080"
+#SECRET_URL = "localhost:8080"
 # for users
 users = {}
 
@@ -66,5 +66,5 @@ api.add_resource(IconList, '/iconlist')
 api.add_resource(Index, '/')
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8081)
+    app.run(host="0.0.0.0", port=80)
     #app.run(debug=True)
