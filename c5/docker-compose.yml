@@ -1,20 +1,20 @@
 version: '2'
 services:
   web:
-    build: iconserver/
+    build: mainserver/
     ports:
-      - "8082:80"
+      - "8083:80"
     networks:
       ssrf:
-        ipv4_address: 172.16.1.2
+        ipv4_address: 172.16.2.2
   secret:
     build: secretserver/
     networks:
       ssrf:
-        ipv4_address: 172.16.1.4
+        ipv4_address: 172.16.2.4
 networks:
   ssrf:
     ipam:
       config:
-        - subnet: 172.16.1.0/24
-          gateway: 172.16.1.1
+        - subnet: 172.16.2.0/24
+          gateway: 172.16.2.1

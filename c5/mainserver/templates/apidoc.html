@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Does that URL return JSON&quest;</title>
+        <style>
+</style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        
+        <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="does-that-url-return-json">Does that URL return JSON?</h1>
+<p>This API helps you answer that question! All you have to do is send a post request to the <code>json</code> API!</p>
+<h2 id="example">Example</h2>
+<pre><code class="language-shell"><div><span class="hljs-meta">$</span><span class="bash"> curl -XPOST target.livinginsyn.com:8083/json -d <span class="hljs-string">&quot;url=https://api.ipify.org?format=json&quot;</span></span>
+{
+    &quot;status&quot;: &quot;success&quot;,
+    &quot;message&quot;: &quot;That url returns JSON&quot;,
+    &quot;content&quot;: {
+        &quot;ip&quot;: &quot;70.172.130.234&quot;
+    }
+}
+</div></code></pre>
+<h2 id="example-failure">Example (failure)</h2>
+<pre><code class="language-shell"><div><span class="hljs-meta">$</span><span class="bash"> curl -XPOST localhost:8080/json -d <span class="hljs-string">&quot;url=https://www.google.com&quot;</span></span>
+{
+    &quot;status&quot;: &quot;failure&quot;,
+    &quot;message&quot;: &quot;That url doesnt return JSON&quot;
+}
+</div></code></pre>
+<h2 id="notes">Notes:</h2>
+<p>All <code>url</code>'s passed to the API must be <code>http://</code> or <code>https://</code></p>
+
+    </body>
+    </html>

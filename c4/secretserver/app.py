@@ -9,7 +9,7 @@ api = Api(app)
 class Flag(Resource):
     def get(self):
         calling_ip = request.remote_addr
-        return {'flag1': 'final_flag_1337'}
+        return {'flag1': 'c4flag_68421'}
 
 class List(Resource):
     def get(self):
