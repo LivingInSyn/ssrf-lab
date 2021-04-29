@@ -1,1 +1,3 @@
 ctf/.env
+.DS_Store
+*.pyc
