@@ -3,7 +3,7 @@ services:
   web:
     build: iconserver/
     ports:
-      - "8082:80"
+      - "8083:80"
     networks:
       ssrf:
         ipv4_address: 172.16.1.2
