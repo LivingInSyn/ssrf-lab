@@ -25,21 +25,21 @@
     </head>
     <body class="vscode-body vscode-light">
         <h1 id="iconlist-api">IconList API</h1>
-<p>The IconList API is located at: <code>target.livinginsyn.com:8082/iconlist</code></p>
+<p>The IconList API is located at: <code>target.livinginsyn.com:8083/iconlist</code></p>
 <h2 id="get">GET</h2>
 <p>Return a list of available icons</p>
-<pre><code><code><div>$ curl target.livinginsyn.com:8082/iconlist
+<pre><code><code><div>$ curl target.livinginsyn.com:8083/iconlist
 {&quot;icons&quot;: [&quot;/icons-png/Thinkbox-Deadline_4x.png&quot;, &quot;/icons-png/Elastic-Container-Service_Container3_light-bg_4x.png&quot;, &quot;/icons-png/Compute_4x.png&quot;, &quot;/icons-png/Elastic-Container-Service_light-bg_4x.png&quot;,...]}
 </div></code></code></pre>
 <h1 id="icon-api">Icon API</h1>
 <p><strong>Please chose a unique <code>user_id</code> while testing, there is <em>zero</em> protection from clobbering someone elses test</strong></p>
 <h2 id="location">Location</h2>
 <p>The Icon API is located at:</p>
-<pre><code><code><div>target.livinginsyn.com:8082/icon
+<pre><code><code><div>target.livinginsyn.com:8083/icon
 </div></code></code></pre>
 <h2 id="get-1">GET</h2>
 <p>GET requests take the form:</p>
-<pre><code><code><div>target.livinginsyn.com:8082/icon/&lt;user_id: string&gt;
+<pre><code><code><div>target.livinginsyn.com:8083/icon/&lt;user_id: string&gt;
 </div></code></code></pre>
 <h3 id="return-value">Return Value</h3>
 <pre><code class="language-json"><div>{
@@ -48,12 +48,12 @@
 }
 </div></code></pre>
 <h3 id="example">Example</h3>
-<pre><code class="language-shell"><div><span class="hljs-meta">$</span><span class="bash"> curl target.livinginsyn.com:8082/icon/foobar</span>
+<pre><code class="language-shell"><div><span class="hljs-meta">$</span><span class="bash"> curl target.livinginsyn.com:8083/icon/foobar</span>
 {&quot;user_id&quot;: &quot;foobar&quot;, &quot;icon_path&quot;: &quot;/icons-png/ad.png&quot;}
 </div></code></pre>
 <h2 id="put">PUT</h2>
 <p>PUT requests <code>upserts</code> a new user ID. Requests take the form:</p>
-<pre><code><code><div>target.livinginsyn.com:8082/icon/&lt;user_id: string&gt;
+<pre><code><code><div>target.livinginsyn.com:8083/icon/&lt;user_id: string&gt;
 </div></code></code></pre>
 <h3 id="request-arguments">Request Arguments</h3>
 <p>The Put request takes a single argument <code>icon_path</code> which is a path returned by the <code>iconlist</code> API</p>
@@ -65,7 +65,7 @@
 }
 </div></code></pre>
 <h3 id="example-1">Example</h3>
-<pre><code class="language-shell"><div><span class="hljs-meta">$</span><span class="bash"> curl -XPUT target.livinginsyn.com:8082/icon/foobar -d <span class="hljs-string">&quot;icon_path=/icons-png/Thinkbox-Deadline_4x.png&quot;</span></span>
+<pre><code class="language-shell"><div><span class="hljs-meta">$</span><span class="bash"> curl -XPUT target.livinginsyn.com:8083/icon/foobar -d <span class="hljs-string">&quot;icon_path=/icons-png/Thinkbox-Deadline_4x.png&quot;</span></span>
 {&quot;user_id&quot;: &quot;foobar&quot;, &quot;image&quot;: &quot;iVBOR...SuQmCC==&quot;}
 </div></code></pre>
 
