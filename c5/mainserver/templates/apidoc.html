@@ -27,7 +27,7 @@
         <h1 id="does-that-url-return-json">Does that URL return JSON?</h1>
 <p>This API helps you answer that question! All you have to do is send a post request to the <code>json</code> API!</p>
 <h2 id="example">Example</h2>
-<pre><code class="language-shell"><div><span class="hljs-meta">$</span><span class="bash"> curl -XPOST target.livinginsyn.com:8083/json -d <span class="hljs-string">&quot;url=https://api.ipify.org?format=json&quot;</span></span>
+<pre><code class="language-shell"><div><span class="hljs-meta">$</span><span class="bash"> curl -XPOST target.livinginsyn.com:8084/json -d <span class="hljs-string">&quot;url=https://api.ipify.org?format=json&quot;</span></span>
 {
     &quot;status&quot;: &quot;success&quot;,
     &quot;message&quot;: &quot;That url returns JSON&quot;,
@@ -37,7 +37,7 @@
 }
 </div></code></pre>
 <h2 id="example-failure">Example (failure)</h2>
-<pre><code class="language-shell"><div><span class="hljs-meta">$</span><span class="bash"> curl -XPOST localhost:8080/json -d <span class="hljs-string">&quot;url=https://www.google.com&quot;</span></span>
+<pre><code class="language-shell"><div><span class="hljs-meta">$</span><span class="bash"> curl -XPOST target.livinginsyn.com:8084/json -d <span class="hljs-string">&quot;url=https://www.google.com&quot;</span></span>
 {
     &quot;status&quot;: &quot;failure&quot;,
     &quot;message&quot;: &quot;That url doesnt return JSON&quot;

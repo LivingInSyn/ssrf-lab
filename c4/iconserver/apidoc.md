@@ -1,10 +1,10 @@
 # IconList API
-The IconList API is located at: `target.livinginsyn.com:8082/iconlist`
+The IconList API is located at: `target.livinginsyn.com:8083/iconlist`
 
 ## GET 
 Return a list of available icons
 ```
-$ curl target.livinginsyn.com:8082/iconlist
+$ curl target.livinginsyn.com:8083/iconlist
 {"icons": ["/icons-png/Thinkbox-Deadline_4x.png", "/icons-png/Elastic-Container-Service_Container3_light-bg_4x.png", "/icons-png/Compute_4x.png", "/icons-png/Elastic-Container-Service_light-bg_4x.png",...]}
 ```
 
@@ -15,13 +15,13 @@ $ curl target.livinginsyn.com:8082/iconlist
 ## Location
 The Icon API is located at:
 ```
-target.livinginsyn.com:8082/icon
+target.livinginsyn.com:8083/icon
 ```
 
 ## GET
 GET requests take the form:
 ```
-target.livinginsyn.com:8082/icon/<user_id: string>
+target.livinginsyn.com:8083/icon/<user_id: string>
 ```
 ### Return Value
 ```json
@@ -33,13 +33,13 @@ target.livinginsyn.com:8082/icon/<user_id: string>
 
 ### Example
 ```shell
-$ curl target.livinginsyn.com:8082/icon/foobar
+$ curl target.livinginsyn.com:8083/icon/foobar
 {"user_id": "foobar", "icon_path": "/icons-png/ad.png"}
 ```
 ## PUT
 PUT requests `upserts` a new user ID. Requests take the form:
 ```
-target.livinginsyn.com:8082/icon/<user_id: string>
+target.livinginsyn.com:8083/icon/<user_id: string>
 ```
 
 ### Request Arguments
@@ -56,6 +56,6 @@ This API returns the user_id and the contents of the file at `icon_path` base64 
 
 ### Example
 ```shell
-$ curl -XPUT target.livinginsyn.com:8082/icon/foobar -d "icon_path=/icons-png/Thinkbox-Deadline_4x.png"
+$ curl -XPUT target.livinginsyn.com:8083/icon/foobar -d "icon_path=/icons-png/Thinkbox-Deadline_4x.png"
 {"user_id": "foobar", "image": "iVBOR...SuQmCC=="}
 ```
